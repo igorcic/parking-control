@@ -22,8 +22,6 @@ public class ParkingSpotDtos {
     @NotBlank
     private String coloCar;
     @NotBlank
-    private LocalDateTime registrationDate;
-    @NotBlank
     private String responsibleName;
     @NotBlank
     private String apartment;

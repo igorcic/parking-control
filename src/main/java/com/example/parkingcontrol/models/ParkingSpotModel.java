@@ -13,7 +13,7 @@ import java.util.UUID;
 @Data
 public class ParkingSpotModel implements Serializable {
     private static final long serialVersionUID = 1L;
-//melhoramento: Criar uma classe carro e relacionar 1 para 1
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
