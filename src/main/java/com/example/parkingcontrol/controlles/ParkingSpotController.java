@@ -43,7 +43,7 @@ public class ParkingSpotController {
         return ResponseEntity.status(HttpStatus.CREATED).body(parkingSpotService.save(parkingSpotModel));
     }
 
-    @PostMapping
+    @GetMapping
     public ResponseEntity<List<ParkingSpotModel>> getAllParkingSpot(){
         return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.findAll());
 
