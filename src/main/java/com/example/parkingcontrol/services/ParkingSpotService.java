@@ -3,9 +3,12 @@ package com.example.parkingcontrol.services;
 
 import com.example.parkingcontrol.models.ParkingSpotModel;
 import com.example.parkingcontrol.repositores.ParkingSpotRepository;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.transaction.Transactional;
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -34,8 +37,8 @@ public class ParkingSpotService {
         return  parkingSpotRepository.existsByApartmentAndBlock(apartment,block);
     }
 
-    public List<ParkingSpotModel> findAll() {
-        return parkingSpotRepository.findAll();
+    public Page<ParkingSpotModel> findAll(Pageable pageable) {
+        return parkingSpotRepository.findAll((org.springframework.data.domain.Pageable) pageable);
     }
 
     public Optional<ParkingSpotModel> findById(UUID id) {
@@ -46,4 +49,5 @@ public class ParkingSpotService {
     public void delete(ParkingSpotModel parkingSpotModel) {
         parkingSpotRepository.delete(parkingSpotModel);
     }
+
 }
